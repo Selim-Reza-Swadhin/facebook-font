@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my facebook</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>  
+      .header .fa{
+        color: lightgray;
+       
+    }
+
+    .header .search{
+        padding-top: 10px;
+    }
+	
+    .header{
+        background-color:#4267b2;
+        height:40px;
+        padding-left:200px;
+		line-height:40px;
+    }
+    input{
+        height:20px;
+        width: 370px;
+    }
+	
+	.main-content{
+        margin-left: 200px;
+        width: 851px;		
+    }
+	
+	.cover{
+        background-image: url('pic/b.jpg');
+        background-size: 851px 315px;
+        height: 315px;
+		border:0.5px solid gray;
+    }
+	
+	.profile-pic{
+        background-image: url('pic/c.jpg');
+        background-size: 160px 160px;
+        height: 160px;
+        width:160px;
+	   position:relative;
+        top: 180px;
+        left: 15px;
+    }
+	
+	   .timeline-post{
+        margin-top: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <i class="fa fa-facebook-official"></i>
+        
+        <input type="text" placeholder="Selim Reza Swadhin"></input>
+        
+        <span>
+            <i class="fa fa-search"></i>
+        </span>
+       
+        <span>Home</span>
+	    <span>
+		<i class="fa fa-globe"></i>
+		<i class="fa fa-bell"></i>
+	    </span>
+    </div>
+	<!-- cover -->
+	
+	    <div class="main-content">
+			<div class="cover">
+				<div class="profile-pic"></div>
+			</div>
+			
+		    <div class="timeline-post">
+                <textarea placeholder="What's on your mind?" name="" id="status" cols="70" rows="4"></textarea>
+				<br />
+                <button  onclick="postStatus()" class="btn btn-success">Post</button>
+                <div id="posts"></div>
+                <div id="date"></div>
+            </div>
+        </div>
+
+        <script>
+        function postStatus(){
+            var textElement = document.getElementById('status');
+            var status = textElement.value;
+            alert(status);
+            
+           
+            var postElement = document.getElementById('posts');
+            postElement.append(status);
+            var d = new Date();
+            var str = d.toString();
+            document.getElementById('date').innerHTML =d.toString();
+        }
+        </script>
+</body>
+</html>
